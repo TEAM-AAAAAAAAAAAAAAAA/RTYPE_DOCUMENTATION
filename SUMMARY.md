@@ -1,10 +1,8 @@
 # Table of contents
 
-* [ECS MANUAL](README.md)
-
 ## 🍜 Welcome
 
-* [R-THAAAAAAï](welcome/r-thaaaaaai.md)
+* [R-THAAAAAAï](README.md)
 
 ## 🧱 Setup and install process
 
@@ -14,7 +12,9 @@
 
 ## 💻 Developpement guidelines & how tos
 
-* [Page 1](developpement-guidelines-and-how-tos/page-1.md)
+* [Network](developpement-guidelines-and-how-tos/network.md)
+* [ECS MANUAL](developpement-guidelines-and-how-tos/readme.md)
+* [Configuration](developpement-guidelines-and-how-tos/configuration.md)
 
 ## ❓ Frequently Asked Questions
 
