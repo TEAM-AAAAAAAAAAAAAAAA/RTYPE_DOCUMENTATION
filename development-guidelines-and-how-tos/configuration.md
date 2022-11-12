@@ -2,7 +2,7 @@
 description: How to configure the game
 ---
 
-# Configuration
+# ⚙ Configuration
 
 ### Assets
 
@@ -37,4 +37,4 @@ port=8000
 ```
 {% endcode %}
 
-Here is the configuration of the game you can change: background music (in bgm section), sounds (in sfx section), font (you got it), keybinds (guess what), fps, and server info.
+Here is the configuration of the game you can change: background music (in bgm section), sound effects (in sfx section), font (you got it), keybinds (guess what), fps, and server info.

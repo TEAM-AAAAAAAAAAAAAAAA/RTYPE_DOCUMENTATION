@@ -2,7 +2,7 @@
 description: Description of the server, the client and the RFC
 ---
 
-# Network
+# 📡 Network
 
 ### Server
 
