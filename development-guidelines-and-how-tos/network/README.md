@@ -30,4 +30,8 @@ We will see how to change port and host in the Asset and Keys
 
 ### RFC
 
-The RFC (Request for comments) of our server/client protocol can be found[ here.](https://hackmd.io/@R-THAIPE/HkfnL\_lzs)
+The RFC (Request for comments) of our server/client protocol can be found here
+
+{% content-ref url="rfc.md" %}
+[rfc.md](rfc.md)
+{% endcontent-ref %}

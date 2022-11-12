@@ -3,7 +3,7 @@
 ## 🍜 Welcome
 
 * [R-THAAAAAAï](README.md)
-* [Installation processes](welcome/installation-processes.md)
+* [💽 Installation processes](welcome/installation-processes.md)
 
 ***
 
