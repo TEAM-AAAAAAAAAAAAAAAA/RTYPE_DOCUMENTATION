@@ -18,3 +18,7 @@ This game is informally called a Horizontal Shmup (e.g. Shoot’em’up), and wh
 
 
 
+{% hint style="info" %}
+This page is a work in progress
+{% endhint %}
+
