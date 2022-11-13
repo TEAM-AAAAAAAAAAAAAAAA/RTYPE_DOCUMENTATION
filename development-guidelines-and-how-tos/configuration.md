@@ -74,3 +74,8 @@ You can use F15 to shoot if you want, try it if your keyboard is big enough :smi
 (we said every keys)
 {% endhint %}
 
+
+
+### Game and Server
+
+Game and Server configuration are not yet implemented in our code, this is a job for you :wink:
