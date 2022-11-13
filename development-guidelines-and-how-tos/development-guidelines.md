@@ -33,4 +33,4 @@ So your commit must look as this one for example.
 git commit -m "feat: add sound when clicking a button" -S
 ```
 
-After pushing your branch and made sure your feature is done and tested, here come the time of creating a Pull Request on GitHub whith detailed description of your feature. It will be reviewed and merged afterward if accepted. Don't forgot to delete your branch afterward.
+After pushing your branch and made sure your feature is done and tested, here come the time of creating a Pull Request on GitHub whith detailed description of your feature. It will be reviewed and merged afterward if accepted. Don't forgot to delete your branch.
