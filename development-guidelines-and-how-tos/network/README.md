@@ -37,13 +37,11 @@ A Client is created when executing the binary "r-type\_client" .
 
 The menu permit you to select a room, or to set the options of your game like the sound volume.
 
-All the display and keyboard inputs are handled by the client.
-
 The Client class is also a singleton using threads to hande incomming and outgoing data and work like the server (remember ingoing and outgoing lockedQueue ?).&#x20;
 
+The client display every drawable entities from the server and himself (like the HUD) on the screen, and send the keyboards input to the server who handle them.
 
-
-
+Because R-THAÏ is a multiplayer game, you can play on different client at the same time.
 
 
 
