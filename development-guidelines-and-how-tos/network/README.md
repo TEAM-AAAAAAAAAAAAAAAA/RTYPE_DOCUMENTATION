@@ -13,20 +13,45 @@ All the game logic and the connexions are handled by the server and sent to the 
 In order to start a server, you need to specify a port (8000 by default) in the entrypoint of the server part. The Server class is a singleton which run independently to the ECS.\
 The server is asynchronous and the receiving IOService run in a thread.
 
-\
+Two LockedQueue (using mutexs) are responsible of the ingoing and outgoing data. In order to send data, you need to push a network::Message (wich is a std::array) into the outgoingQueue, incomming messages are handled in the HandleIncommingMessage class.
+
+```cpp
+network::Message msg;
+//fill message
+msg[0] = 0;
+network::Server::getOutgoingMessages().push( 
+network::ServerMessage(msg, std::vector()));
+```
+
+{% hint style="info" %}
+src/ecs/systems/server/HandleIncommingMessage.hpp
+{% endhint %}
+
+
+
 
 
 ### Client
 
-A Client is created when executing the binary "r-type\_client" and a menu appears.
+A Client is created when executing the binary "r-type\_client" .
+
+The menu permit you to select a room, or to set the options of your game like the sound volume.
 
 All the display and keyboard inputs are handled by the client.
 
-In order to start a client, you need to specify a port (8000 by default) and a host (localhost by default) in the getGameWorld function (getWorld.cpp). The Client class is also a singleton using threads to hande incomming and outgoing data.&#x20;
-
-We will see how to change port and host in the Asset and Keys
+The Client class is also a singleton using threads to hande incomming and outgoing data and work like the server (remember ingoing and outgoing lockedQueue ?).&#x20;
 
 
+
+
+
+
+
+
+
+### Lobby
+
+The lobby countain 4 rooms you can connect to. It interact with the client who can choose his room. It works by forking and executing the r-type\_server binary with different ports.
 
 ### RFC
 

@@ -22,6 +22,8 @@ TypeId -> 1 byte binary of the entity's type ID
 VelocityX -> 1 byte binary of the horizontal velocity of entity
 VelocityY -> 1 byte binary of the vertical velocity of entity
 ClientName -> 4 bytes of chars that identify the player
+OccupiedSlots -> 1 byte binary of the amount of clients already connected
+Health -> 1 byte binary of the amount of health the player has
 ```
 
 ### Order of bytes:
@@ -29,7 +31,7 @@ ClientName -> 4 bytes of chars that identify the player
 In order to stay consistant with the information that is received and sent, we have decided to follow this template for all packets.
 
 ```
-<packet type>(<ClientName>)(<EntityNetworkId>)(<TypeId>)(<PosX><PosY>)(<Width><Height>)(<VelocityX><VelocityY>)
+<packet type>(<Health>)(<OccupiedSlots>)(<ClientName>)(<EntityNetworkId>)(<TypeId>)(<PosX><PosY>)(<Width><Height>)(<VelocityX><VelocityY>)
 ```
 
 ## Universal
@@ -62,25 +64,12 @@ Client connects to the hub
 Packet type: 00000000 (0)
 ```
 
-Client creates to a room
-
-```
-Packet type: 11111110 (254)
-```
-
-Client connects to a room
-
-```
-Packet type: 11111111 (255)
-    EntityNetworkId: 2 byte
-```
-
 ### Request room information
 
 Client refreshes server list
 
 ```
-Packet type: 10000000 (128)
+Packet type: 00111100 (60)
 ```
 
 ## Hub Server to Client
@@ -98,8 +87,8 @@ Packet type: 01000000 (64)
 
 ```
 Packet type: 10000001 (129)
-    EntityNetworkId: 2 byte
-    Availability: 1 byte
+    Port: 2 byte
+    OccupiedSlots: 1 byte
 ```
 
 ## Hub to Room
@@ -119,23 +108,15 @@ Packet type: 01111111 (127)
 ## Room to Hub
 
 ```
-Packet type: 10000001 (129)
-    Availability: 1 byte
-```
-
-## Room to Hub
-
-Response to hub connecting to room
-
-```
-Packet type: 01000101 (69)
+Packet type: 10000010 (130)
+    OccupiedSlots: 1 byte
 ```
 
 ### Room info
 
 ```
-Packet type: 10000010 (130)
-    Availability: 1 byte
+Packet type: 00111101 (61)
+    OccupiedSlots: 1 byte
 ```
 
 ## Client to Room
@@ -202,6 +183,16 @@ Packet type: 00001000 (8)
 Health of player:
 
 ```
-Packet type: 100110 (38)
+Packet type: 00100110 (38)
+    NetworkID: 2 bytes
     Health: 1 byte
+```
+
+### Server on wave counter
+
+Wave:
+
+```
+Packet type: 00101000 (40)
+    WaveCount: 1 byte
 ```
