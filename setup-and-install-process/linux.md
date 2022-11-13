@@ -63,7 +63,7 @@ If you are using Visual Studio, you should be able to launch directly the soluti
 If you want to compile using the CLI. You can do so by first, configure the build folder:
 
 ```
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAINFILE='vcpkg/scripts/buildsystems/vcpkg.cmake' -DSFML_DIR='vcpkg/installed/x64-linux-dynamic/share/sfml'
+cmake -S . -B ./build -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake -DBoost_NO_SYSTEM_PATHS=TRUE -DBOOST_ROOT=vcpkg/installed/x64-linux-dynamic/ -DSFML_DIR=vcpkg/installed/x64-linux-dynamic/share/sfml/
 ```
 
 You'll then need to build the project:
